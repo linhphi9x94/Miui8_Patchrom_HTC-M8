@@ -7830,7 +7830,7 @@
     move-result v24
 
     or-int p3, p3, v24
-
+    
     return p3
 
     .line 7597
