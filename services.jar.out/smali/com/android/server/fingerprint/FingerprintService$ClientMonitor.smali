@@ -18,8 +18,6 @@
 
 
 # instance fields
-.field currentUserId:I
-
 .field owner:Ljava/lang/String;
 
 .field receiver:Landroid/hardware/fingerprint/IFingerprintServiceReceiver;
@@ -98,41 +96,37 @@
     return v0
 .end method
 
-.method public constructor <init>(Lcom/android/server/fingerprint/FingerprintService;Landroid/os/IBinder;Landroid/hardware/fingerprint/IFingerprintServiceReceiver;IIZLjava/lang/String;)V
+.method public constructor <init>(Lcom/android/server/fingerprint/FingerprintService;Landroid/os/IBinder;Landroid/hardware/fingerprint/IFingerprintServiceReceiver;IZLjava/lang/String;)V
     .locals 3
     .param p1, "this$0"    # Lcom/android/server/fingerprint/FingerprintService;
     .param p2, "token"    # Landroid/os/IBinder;
     .param p3, "receiver"    # Landroid/hardware/fingerprint/IFingerprintServiceReceiver;
-    .param p4, "currentUserId"    # I
-    .param p5, "userId"    # I
-    .param p6, "restricted"    # Z
-    .param p7, "owner"    # Ljava/lang/String;
+    .param p4, "userId"    # I
+    .param p5, "restricted"    # Z
+    .param p6, "owner"    # Ljava/lang/String;
 
     .prologue
-    .line 635
+    .line 630
     iput-object p1, p0, Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 637
+    .line 632
     iput-object p2, p0, Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;->token:Landroid/os/IBinder;
 
-    .line 638
+    .line 633
     iput-object p3, p0, Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;->receiver:Landroid/hardware/fingerprint/IFingerprintServiceReceiver;
 
-    .line 639
-    iput p5, p0, Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;->userId:I
+    .line 634
+    iput p4, p0, Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;->userId:I
 
-    .line 640
-    iput p4, p0, Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;->currentUserId:I
+    .line 635
+    iput-boolean p5, p0, Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;->restricted:Z
 
-    .line 641
-    iput-boolean p6, p0, Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;->restricted:Z
+    .line 636
+    iput-object p6, p0, Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;->owner:Ljava/lang/String;
 
-    .line 642
-    iput-object p7, p0, Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;->owner:Ljava/lang/String;
-
-    .line 644
+    .line 638
     const/4 v1, 0x0
 
     :try_start_0
@@ -140,15 +134,15 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 636
+    .line 631
     :goto_0
     return-void
 
-    .line 645
+    .line 639
     :catch_0
     move-exception v0
 
-    .line 646
+    .line 640
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v1, "FingerprintService"
 
@@ -168,14 +162,14 @@
 
     const/4 v4, 0x0
 
-    .line 759
+    .line 753
     iget-object v1, p0, Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;->receiver:Landroid/hardware/fingerprint/IFingerprintServiceReceiver;
 
     if-nez v1, :cond_0
 
     return v5
 
-    .line 761
+    .line 755
     :cond_0
     :try_start_0
     iget-object v1, p0, Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;->receiver:Landroid/hardware/fingerprint/IFingerprintServiceReceiver;
@@ -191,23 +185,23 @@
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 769
+    .line 763
     if-nez p1, :cond_1
 
-    .line 770
+    .line 764
     iget-object v1, p0, Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     invoke-static {v1}, Lcom/android/server/fingerprint/FingerprintService;->-wrap7(Lcom/android/server/fingerprint/FingerprintService;)V
 
-    .line 762
+    .line 756
     :cond_1
     return v4
 
-    .line 763
+    .line 757
     :catch_0
     move-exception v0
 
-    .line 764
+    .line 758
     .local v0, "e":Landroid/os/RemoteException;
     :try_start_1
     const-string/jumbo v1, "FingerprintService"
@@ -218,32 +212,32 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 769
+    .line 763
     if-nez p1, :cond_2
 
-    .line 770
+    .line 764
     iget-object v1, p0, Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     invoke-static {v1}, Lcom/android/server/fingerprint/FingerprintService;->-wrap7(Lcom/android/server/fingerprint/FingerprintService;)V
 
-    .line 765
+    .line 759
     :cond_2
     return v5
 
-    .line 767
+    .line 761
     .end local v0    # "e":Landroid/os/RemoteException;
     :catchall_0
     move-exception v1
 
-    .line 769
+    .line 763
     if-nez p1, :cond_3
 
-    .line 770
+    .line 764
     iget-object v2, p0, Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     invoke-static {v2}, Lcom/android/server/fingerprint/FingerprintService;->-wrap7(Lcom/android/server/fingerprint/FingerprintService;)V
 
-    .line 767
+    .line 761
     :cond_3
     throw v1
 .end method
@@ -254,23 +248,23 @@
     .param p2, "groupId"    # I
 
     .prologue
-    .line 716
+    .line 710
     const/4 v8, 0x0
 
-    .line 717
+    .line 711
     .local v8, "result":Z
     if-eqz p1, :cond_1
 
     const/4 v6, 0x1
 
-    .line 718
+    .line 712
     .local v6, "authenticated":Z
     :goto_0
     iget-object v1, p0, Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;->receiver:Landroid/hardware/fingerprint/IFingerprintServiceReceiver;
 
     if-eqz v1, :cond_4
 
-    .line 720
+    .line 714
     :try_start_0
     iget-object v1, p0, Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
@@ -282,10 +276,10 @@
 
     invoke-static {v1, v2, v6}, Lcom/android/internal/logging/MetricsLogger;->action(Landroid/content/Context;IZ)V
 
-    .line 722
+    .line 716
     if-nez v6, :cond_2
 
-    .line 723
+    .line 717
     iget-object v1, p0, Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;->receiver:Landroid/hardware/fingerprint/IFingerprintServiceReceiver;
 
     iget-object v2, p0, Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;->this$0:Lcom/android/server/fingerprint/FingerprintService;
@@ -298,16 +292,16 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 740
+    .line 734
     :goto_1
     if-nez p1, :cond_5
 
-    .line 741
+    .line 735
     iget-object v1, p0, Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;->receiver:Landroid/hardware/fingerprint/IFingerprintServiceReceiver;
 
     if-eqz v1, :cond_0
 
-    .line 742
+    .line 736
     iget-object v1, p0, Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     invoke-virtual {v1}, Lcom/android/server/fingerprint/FingerprintService;->getContext()Landroid/content/Context;
@@ -316,7 +310,7 @@
 
     invoke-static {v1}, Lcom/android/server/fingerprint/FingerprintUtils;->vibrateFingerprintError(Landroid/content/Context;)V
 
-    .line 744
+    .line 738
     :cond_0
     iget-object v1, p0, Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
@@ -326,12 +320,12 @@
 
     or-int/2addr v8, v1
 
-    .line 752
+    .line 746
     .local v8, "result":Z
     :goto_2
     return v8
 
-    .line 717
+    .line 711
     .end local v6    # "authenticated":Z
     .local v8, "result":Z
     :cond_1
@@ -340,7 +334,7 @@
     .restart local v6    # "authenticated":Z
     goto :goto_0
 
-    .line 726
+    .line 720
     :cond_2
     :try_start_1
     const-string/jumbo v1, "FingerprintService"
@@ -367,10 +361,10 @@
 
     move-result-object v2
 
-    .line 727
+    .line 721
     const-string/jumbo v3, ", id="
 
-    .line 726
+    .line 720
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
@@ -379,10 +373,10 @@
 
     move-result-object v2
 
-    .line 727
+    .line 721
     const-string/jumbo v3, ", gp="
 
-    .line 726
+    .line 720
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
@@ -391,10 +385,10 @@
 
     move-result-object v2
 
-    .line 727
+    .line 721
     const-string/jumbo v3, ")"
 
-    .line 726
+    .line 720
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
@@ -405,16 +399,16 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 729
+    .line 723
     iget-boolean v1, p0, Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;->restricted:Z
 
     if-nez v1, :cond_3
 
+    .line 724
     new-instance v0, Landroid/hardware/fingerprint/Fingerprint;
 
     const-string/jumbo v1, ""
 
-    .line 730
     iget-object v2, p0, Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     invoke-static {v2}, Lcom/android/server/fingerprint/FingerprintService;->-get3(Lcom/android/server/fingerprint/FingerprintService;)J
@@ -425,10 +419,9 @@
 
     move v3, p1
 
-    .line 729
     invoke-direct/range {v0 .. v5}, Landroid/hardware/fingerprint/Fingerprint;-><init>(Ljava/lang/CharSequence;IIJ)V
 
-    .line 731
+    .line 725
     :goto_3
     iget-object v1, p0, Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;->receiver:Landroid/hardware/fingerprint/IFingerprintServiceReceiver;
 
@@ -438,19 +431,17 @@
 
     move-result-wide v2
 
-    iget v4, p0, Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;->currentUserId:I
-
-    invoke-interface {v1, v2, v3, v0, v4}, Landroid/hardware/fingerprint/IFingerprintServiceReceiver;->onAuthenticationSucceeded(JLandroid/hardware/fingerprint/Fingerprint;I)V
+    invoke-interface {v1, v2, v3, v0}, Landroid/hardware/fingerprint/IFingerprintServiceReceiver;->onAuthenticationSucceeded(JLandroid/hardware/fingerprint/Fingerprint;)V
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
 
     goto :goto_1
 
-    .line 733
+    .line 727
     :catch_0
     move-exception v7
 
-    .line 734
+    .line 728
     .local v7, "e":Landroid/os/RemoteException;
     const-string/jumbo v1, "FingerprintService"
 
@@ -458,12 +449,12 @@
 
     invoke-static {v1, v2, v7}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 735
+    .line 729
     const/4 v8, 0x1
 
     goto/16 :goto_1
 
-    .line 730
+    .line 724
     .end local v7    # "e":Landroid/os/RemoteException;
     :cond_3
     const/4 v0, 0x0
@@ -471,20 +462,20 @@
     .local v0, "fp":Landroid/hardware/fingerprint/Fingerprint;
     goto :goto_3
 
-    .line 738
+    .line 732
     .end local v0    # "fp":Landroid/hardware/fingerprint/Fingerprint;
     :cond_4
     const/4 v8, 0x1
 
     goto/16 :goto_1
 
-    .line 746
+    .line 740
     :cond_5
     iget-object v1, p0, Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;->receiver:Landroid/hardware/fingerprint/IFingerprintServiceReceiver;
 
     if-eqz v1, :cond_6
 
-    .line 747
+    .line 741
     iget-object v1, p0, Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     invoke-virtual {v1}, Lcom/android/server/fingerprint/FingerprintService;->getContext()Landroid/content/Context;
@@ -493,13 +484,13 @@
 
     invoke-static {v1}, Lcom/android/server/fingerprint/FingerprintUtils;->vibrateFingerprintSuccess(Landroid/content/Context;)V
 
-    .line 749
+    .line 743
     :cond_6
     const/4 v1, 0x1
 
     or-int/2addr v8, v1
 
-    .line 750
+    .line 744
     .local v8, "result":Z
     iget-object v1, p0, Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
@@ -519,14 +510,14 @@
 
     const/4 v7, 0x1
 
-    .line 700
+    .line 694
     iget-object v1, p0, Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;->receiver:Landroid/hardware/fingerprint/IFingerprintServiceReceiver;
 
     if-nez v1, :cond_0
 
     return v7
 
-    .line 701
+    .line 695
     :cond_0
     iget-object v1, p0, Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
@@ -536,7 +527,7 @@
 
     invoke-static {v1}, Lcom/android/server/fingerprint/FingerprintUtils;->vibrateFingerprintSuccess(Landroid/content/Context;)V
 
-    .line 702
+    .line 696
     iget-object v1, p0, Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     invoke-static {v1}, Lcom/android/server/fingerprint/FingerprintService;->-get1(Lcom/android/server/fingerprint/FingerprintService;)Landroid/content/Context;
@@ -547,7 +538,7 @@
 
     invoke-static {v1, v2}, Lcom/android/internal/logging/MetricsLogger;->action(Landroid/content/Context;I)V
 
-    .line 704
+    .line 698
     :try_start_0
     iget-object v1, p0, Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;->receiver:Landroid/hardware/fingerprint/IFingerprintServiceReceiver;
 
@@ -567,7 +558,7 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 705
+    .line 699
     if-nez p3, :cond_1
 
     move v1, v7
@@ -580,11 +571,11 @@
 
     goto :goto_0
 
-    .line 706
+    .line 700
     :catch_0
     move-exception v0
 
-    .line 707
+    .line 701
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v1, "FingerprintService"
 
@@ -592,7 +583,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 708
+    .line 702
     return v7
 .end method
 
@@ -601,12 +592,12 @@
     .param p1, "error"    # I
 
     .prologue
-    .line 779
+    .line 773
     iget-object v1, p0, Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;->receiver:Landroid/hardware/fingerprint/IFingerprintServiceReceiver;
 
     if-eqz v1, :cond_0
 
-    .line 781
+    .line 775
     :try_start_0
     iget-object v1, p0, Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;->receiver:Landroid/hardware/fingerprint/IFingerprintServiceReceiver;
 
@@ -620,18 +611,18 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 786
+    .line 780
     :cond_0
     :goto_0
     const/4 v1, 0x1
 
     return v1
 
-    .line 782
+    .line 776
     :catch_0
     move-exception v0
 
-    .line 783
+    .line 777
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v1, "FingerprintService"
 
@@ -652,14 +643,14 @@
 
     const/4 v2, 0x0
 
-    .line 686
+    .line 680
     iget-object v3, p0, Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;->receiver:Landroid/hardware/fingerprint/IFingerprintServiceReceiver;
 
     if-nez v3, :cond_0
 
     return v1
 
-    .line 688
+    .line 682
     :cond_0
     :try_start_0
     iget-object v3, p0, Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;->receiver:Landroid/hardware/fingerprint/IFingerprintServiceReceiver;
@@ -674,7 +665,7 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 689
+    .line 683
     if-nez p1, :cond_1
 
     :goto_0
@@ -685,11 +676,11 @@
 
     goto :goto_0
 
-    .line 690
+    .line 684
     :catch_0
     move-exception v0
 
-    .line 691
+    .line 685
     .local v0, "e":Landroid/os/RemoteException;
     const-string/jumbo v1, "FingerprintService"
 
@@ -697,7 +688,7 @@
 
     invoke-static {v1, v3, v0}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 693
+    .line 687
     return v2
 .end method
 
@@ -709,18 +700,18 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 665
+    .line 659
     iput-object v1, p0, Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;->token:Landroid/os/IBinder;
 
-    .line 666
+    .line 660
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     invoke-static {v0, p0}, Lcom/android/server/fingerprint/FingerprintService;->-wrap4(Lcom/android/server/fingerprint/FingerprintService;Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;)V
 
-    .line 667
+    .line 661
     iput-object v1, p0, Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;->receiver:Landroid/hardware/fingerprint/IFingerprintServiceReceiver;
 
-    .line 664
+    .line 658
     return-void
 .end method
 
@@ -730,12 +721,12 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 651
+    .line 645
     iget-object v1, p0, Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;->token:Landroid/os/IBinder;
 
     if-eqz v1, :cond_0
 
-    .line 653
+    .line 647
     :try_start_0
     iget-object v1, p0, Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;->token:Landroid/os/IBinder;
 
@@ -745,22 +736,22 @@
     :try_end_0
     .catch Ljava/util/NoSuchElementException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 658
+    .line 652
     :goto_0
     iput-object v5, p0, Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;->token:Landroid/os/IBinder;
 
-    .line 660
+    .line 654
     :cond_0
     iput-object v5, p0, Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;->receiver:Landroid/hardware/fingerprint/IFingerprintServiceReceiver;
 
-    .line 650
+    .line 644
     return-void
 
-    .line 654
+    .line 648
     :catch_0
     move-exception v0
 
-    .line 656
+    .line 650
     .local v0, "e":Ljava/util/NoSuchElementException;
     const-string/jumbo v1, "FingerprintService"
 
@@ -808,13 +799,13 @@
     .end annotation
 
     .prologue
-    .line 673
+    .line 667
     :try_start_0
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;->token:Landroid/os/IBinder;
 
     if-eqz v0, :cond_0
 
-    .line 674
+    .line 668
     const-string/jumbo v0, "FingerprintService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -839,27 +830,27 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 675
+    .line 669
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     invoke-static {v0, p0}, Lcom/android/server/fingerprint/FingerprintService;->-wrap4(Lcom/android/server/fingerprint/FingerprintService;Lcom/android/server/fingerprint/FingerprintService$ClientMonitor;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 678
+    .line 672
     :cond_0
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
-    .line 671
+    .line 665
     return-void
 
-    .line 677
+    .line 671
     :catchall_0
     move-exception v0
 
-    .line 678
+    .line 672
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
-    .line 677
+    .line 671
     throw v0
 .end method

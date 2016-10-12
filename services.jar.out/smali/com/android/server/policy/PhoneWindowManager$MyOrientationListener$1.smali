@@ -27,7 +27,7 @@
     .param p1, "this$1"    # Lcom/android/server/policy/PhoneWindowManager$MyOrientationListener;
 
     .prologue
-    .line 970
+    .line 968
     iput-object p1, p0, Lcom/android/server/policy/PhoneWindowManager$MyOrientationListener$1;->this$1:Lcom/android/server/policy/PhoneWindowManager$MyOrientationListener;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 974
+    .line 972
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$MyOrientationListener$1;->this$1:Lcom/android/server/policy/PhoneWindowManager$MyOrientationListener;
 
     iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager$MyOrientationListener;->this$0:Lcom/android/server/policy/PhoneWindowManager;
@@ -54,13 +54,13 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/os/PowerManagerInternal;->powerHint(II)V
 
-    .line 975
+    .line 973
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$MyOrientationListener$1;->this$1:Lcom/android/server/policy/PhoneWindowManager$MyOrientationListener;
 
     iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager$MyOrientationListener;->this$0:Lcom/android/server/policy/PhoneWindowManager;
 
     invoke-virtual {v0, v2}, Lcom/android/server/policy/PhoneWindowManager;->updateRotation(Z)V
 
-    .line 972
+    .line 970
     return-void
 .end method

@@ -1376,7 +1376,7 @@
 
     .line 506
     .local v2, "parser":Landroid/content/res/XmlResourceParser;
-    const v3, 0x1110005
+    const v3, 0x1110004
 
     :try_start_0
     invoke-virtual {p1, v3}, Landroid/content/res/Resources;->getXml(I)Landroid/content/res/XmlResourceParser;

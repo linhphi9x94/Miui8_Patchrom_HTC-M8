@@ -36,7 +36,7 @@
     .param p5, "val$shutdownReceiver"    # Landroid/content/IIntentReceiver;
 
     .prologue
-    .line 20904
+    .line 20891
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$30;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     iput-object p2, p0, Lcom/android/server/am/ActivityManagerService$30;->val$uss:Lcom/android/server/am/UserState;
@@ -65,14 +65,14 @@
     .param p7, "sendingUser"    # I
 
     .prologue
-    .line 20909
+    .line 20896
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/server/am/ActivityManagerService$30;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     monitor-enter v2
 
-    .line 20910
+    .line 20897
     :try_start_0
     move-object/from16 v0, p0
 
@@ -88,10 +88,10 @@
 
     monitor-exit v2
 
-    .line 20912
+    .line 20899
     return-void
 
-    .line 20914
+    .line 20901
     :cond_0
     :try_start_1
     move-object/from16 v0, p0
@@ -106,14 +106,14 @@
 
     monitor-exit v2
 
-    .line 20916
+    .line 20903
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/server/am/ActivityManagerService$30;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v1, v1, Lcom/android/server/am/ActivityManagerService;->mBatteryStatsService:Lcom/android/server/am/BatteryStatsService;
 
-    .line 20918
+    .line 20905
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/android/server/am/ActivityManagerService$30;->val$userId:I
@@ -126,13 +126,13 @@
 
     iget v3, v0, Lcom/android/server/am/ActivityManagerService$30;->val$userId:I
 
-    .line 20917
+    .line 20904
     const/16 v4, 0x4007
 
-    .line 20916
+    .line 20903
     invoke-virtual {v1, v4, v2, v3}, Lcom/android/server/am/BatteryStatsService;->noteEvent(ILjava/lang/String;I)V
 
-    .line 20919
+    .line 20906
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/server/am/ActivityManagerService$30;->this$0:Lcom/android/server/am/ActivityManagerService;
@@ -145,7 +145,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/server/SystemServiceManager;->stopUser(I)V
 
-    .line 20920
+    .line 20907
     move-object/from16 v0, p0
 
     iget-object v1, v0, Lcom/android/server/am/ActivityManagerService$30;->this$0:Lcom/android/server/am/ActivityManagerService;
@@ -154,12 +154,12 @@
 
     iget-object v4, v0, Lcom/android/server/am/ActivityManagerService$30;->val$shutdownIntent:Landroid/content/Intent;
 
-    .line 20921
+    .line 20908
     move-object/from16 v0, p0
 
     iget-object v6, v0, Lcom/android/server/am/ActivityManagerService$30;->val$shutdownReceiver:Landroid/content/IIntentReceiver;
 
-    .line 20922
+    .line 20909
     sget v15, Lcom/android/server/am/ActivityManagerService;->MY_PID:I
 
     move-object/from16 v0, p0
@@ -168,12 +168,12 @@
 
     move/from16 v17, v0
 
-    .line 20920
+    .line 20907
     const/4 v2, 0x0
 
     const/4 v3, 0x0
 
-    .line 20921
+    .line 20908
     const/4 v5, 0x0
 
     const/4 v7, 0x0
@@ -186,7 +186,7 @@
 
     const/4 v11, -0x1
 
-    .line 20922
+    .line 20909
     const/4 v12, 0x0
 
     const/4 v13, 0x1
@@ -195,13 +195,13 @@
 
     const/16 v16, 0x3e8
 
-    .line 20920
+    .line 20907
     invoke-static/range {v1 .. v17}, Lcom/android/server/am/ActivityManagerService;->-wrap5(Lcom/android/server/am/ActivityManagerService;Lcom/android/server/am/ProcessRecord;Ljava/lang/String;Landroid/content/Intent;Ljava/lang/String;Landroid/content/IIntentReceiver;ILjava/lang/String;Landroid/os/Bundle;[Ljava/lang/String;ILandroid/os/Bundle;ZZIII)I
 
-    .line 20907
+    .line 20894
     return-void
 
-    .line 20909
+    .line 20896
     :catchall_0
     move-exception v1
 

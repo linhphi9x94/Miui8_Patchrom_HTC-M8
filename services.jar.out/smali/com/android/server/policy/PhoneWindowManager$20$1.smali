@@ -28,7 +28,7 @@
     .param p3, "val$myConn"    # Landroid/content/ServiceConnection;
 
     .prologue
-    .line 5542
+    .line 5540
     iput-object p1, p0, Lcom/android/server/policy/PhoneWindowManager$20$1;->this$1:Lcom/android/server/policy/PhoneWindowManager$20;
 
     iput-object p3, p0, Lcom/android/server/policy/PhoneWindowManager$20$1;->val$myConn:Landroid/content/ServiceConnection;
@@ -45,7 +45,7 @@
     .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
-    .line 5545
+    .line 5543
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$20$1;->this$1:Lcom/android/server/policy/PhoneWindowManager$20;
 
     iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager$20;->this$0:Lcom/android/server/policy/PhoneWindowManager;
@@ -54,7 +54,7 @@
 
     monitor-enter v1
 
-    .line 5546
+    .line 5544
     :try_start_0
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$20$1;->this$1:Lcom/android/server/policy/PhoneWindowManager$20;
 
@@ -66,7 +66,7 @@
 
     if-ne v0, v2, :cond_0
 
-    .line 5547
+    .line 5545
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$20$1;->this$1:Lcom/android/server/policy/PhoneWindowManager$20;
 
     iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager$20;->this$0:Lcom/android/server/policy/PhoneWindowManager;
@@ -81,7 +81,7 @@
 
     invoke-virtual {v0, v2}, Landroid/content/Context;->unbindService(Landroid/content/ServiceConnection;)V
 
-    .line 5548
+    .line 5546
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$20$1;->this$1:Lcom/android/server/policy/PhoneWindowManager$20;
 
     iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager$20;->this$0:Lcom/android/server/policy/PhoneWindowManager;
@@ -90,7 +90,7 @@
 
     iput-object v2, v0, Lcom/android/server/policy/PhoneWindowManager;->mScreenshotConnection:Landroid/content/ServiceConnection;
 
-    .line 5549
+    .line 5547
     iget-object v0, p0, Lcom/android/server/policy/PhoneWindowManager$20$1;->this$1:Lcom/android/server/policy/PhoneWindowManager$20;
 
     iget-object v0, v0, Lcom/android/server/policy/PhoneWindowManager$20;->this$0:Lcom/android/server/policy/PhoneWindowManager;
@@ -110,10 +110,10 @@
     :cond_0
     monitor-exit v1
 
-    .line 5544
+    .line 5542
     return-void
 
-    .line 5545
+    .line 5543
     :catchall_0
     move-exception v0
 

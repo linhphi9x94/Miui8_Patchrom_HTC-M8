@@ -29,22 +29,22 @@
     .param p2, "tag"    # Ljava/lang/String;
 
     .prologue
-    .line 21165
+    .line 21152
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$SleepTokenImpl;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     invoke-direct {p0}, Landroid/app/ActivityManagerInternal$SleepToken;-><init>()V
 
-    .line 21166
+    .line 21153
     iput-object p2, p0, Lcom/android/server/am/ActivityManagerService$SleepTokenImpl;->mTag:Ljava/lang/String;
 
-    .line 21167
+    .line 21154
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/android/server/am/ActivityManagerService$SleepTokenImpl;->mAcquireTime:J
 
-    .line 21165
+    .line 21152
     return-void
 .end method
 
@@ -54,12 +54,12 @@
     .locals 2
 
     .prologue
-    .line 21172
+    .line 21159
     iget-object v1, p0, Lcom/android/server/am/ActivityManagerService$SleepTokenImpl;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     monitor-enter v1
 
-    .line 21173
+    .line 21160
     :try_start_0
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$SleepTokenImpl;->this$0:Lcom/android/server/am/ActivityManagerService;
 
@@ -71,7 +71,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 21174
+    .line 21161
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$SleepTokenImpl;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     invoke-virtual {v0}, Lcom/android/server/am/ActivityManagerService;->updateSleepIfNeededLocked()V
@@ -81,10 +81,10 @@
     :cond_0
     monitor-exit v1
 
-    .line 21171
+    .line 21158
     return-void
 
-    .line 21172
+    .line 21159
     :catchall_0
     move-exception v0
 
@@ -97,7 +97,7 @@
     .locals 4
 
     .prologue
-    .line 21181
+    .line 21168
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

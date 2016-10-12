@@ -30,7 +30,7 @@
     .param p2, "val$token"    # Landroid/os/IBinder;
 
     .prologue
-    .line 936
+    .line 930
     iput-object p1, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$2;->this$1:Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;
 
     iput-object p2, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$2;->val$token:Landroid/os/IBinder;
@@ -46,7 +46,7 @@
     .locals 3
 
     .prologue
-    .line 939
+    .line 933
     iget-object v0, p0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper$2;->this$1:Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;
 
     iget-object v0, v0, Lcom/android/server/fingerprint/FingerprintService$FingerprintServiceWrapper;->this$0:Lcom/android/server/fingerprint/FingerprintService;
@@ -57,6 +57,6 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/server/fingerprint/FingerprintService;->stopEnrollment(Landroid/os/IBinder;Z)V
 
-    .line 938
+    .line 932
     return-void
 .end method

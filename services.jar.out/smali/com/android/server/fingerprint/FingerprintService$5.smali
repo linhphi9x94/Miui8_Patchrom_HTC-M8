@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lcom/android/server/fingerprint/FingerprintService;
 
     .prologue
-    .line 1162
+    .line 1155
     iput-object p1, p0, Lcom/android/server/fingerprint/FingerprintService$5;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     invoke-direct {p0}, Landroid/app/IUserSwitchObserver$Stub;-><init>()V
@@ -39,7 +39,7 @@
     .param p1, "newProfileId"    # I
 
     .prologue
-    .line 1179
+    .line 1172
     return-void
 .end method
 
@@ -53,7 +53,7 @@
     .end annotation
 
     .prologue
-    .line 1175
+    .line 1168
     return-void
 .end method
 
@@ -63,7 +63,7 @@
     .param p2, "reply"    # Landroid/os/IRemoteCallback;
 
     .prologue
-    .line 1165
+    .line 1158
     iget-object v1, p0, Lcom/android/server/fingerprint/FingerprintService$5;->this$0:Lcom/android/server/fingerprint/FingerprintService;
 
     iget-object v1, v1, Lcom/android/server/fingerprint/FingerprintService;->mHandler:Landroid/os/Handler;
@@ -78,10 +78,10 @@
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 1167
+    .line 1160
     if-eqz p2, :cond_0
 
-    .line 1169
+    .line 1162
     const/4 v1, 0x0
 
     :try_start_0
@@ -89,12 +89,12 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1164
+    .line 1157
     :cond_0
     :goto_0
     return-void
 
-    .line 1170
+    .line 1163
     :catch_0
     move-exception v0
 

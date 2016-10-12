@@ -27,7 +27,7 @@
     .param p1, "this$1"    # Lcom/android/server/policy/PhoneWindowManager$HdmiControl;
 
     .prologue
-    .line 1494
+    .line 1492
     iput-object p1, p0, Lcom/android/server/policy/PhoneWindowManager$HdmiControl$1;->this$1:Lcom/android/server/policy/PhoneWindowManager$HdmiControl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,10 +42,10 @@
     .param p1, "result"    # I
 
     .prologue
-    .line 1497
+    .line 1495
     if-eqz p1, :cond_0
 
-    .line 1498
+    .line 1496
     const-string/jumbo v0, "WindowManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -68,7 +68,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1496
+    .line 1494
     :cond_0
     return-void
 .end method

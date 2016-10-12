@@ -33,7 +33,7 @@
     .param p3, "val$next"    # Lcom/android/server/am/ActivityRecord;
 
     .prologue
-    .line 5385
+    .line 5375
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$5;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     iput-object p2, p0, Lcom/android/server/am/ActivityManagerService$5;->val$cur:Lcom/android/server/am/ActivityRecord;
@@ -51,12 +51,12 @@
     .locals 6
 
     .prologue
-    .line 5388
+    .line 5378
     iget-object v2, p0, Lcom/android/server/am/ActivityManagerService$5;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     monitor-enter v2
 
-    .line 5389
+    .line 5379
     :try_start_0
     new-instance v0, Lcom/android/server/am/LaunchWarningWindow;
 
@@ -72,11 +72,11 @@
 
     invoke-direct {v0, v1, v3, v4}, Lcom/android/server/am/LaunchWarningWindow;-><init>(Landroid/content/Context;Lcom/android/server/am/ActivityRecord;Lcom/android/server/am/ActivityRecord;)V
 
-    .line 5390
+    .line 5380
     .local v0, "d":Landroid/app/Dialog;
     invoke-virtual {v0}, Landroid/app/Dialog;->show()V
 
-    .line 5391
+    .line 5381
     iget-object v1, p0, Lcom/android/server/am/ActivityManagerService$5;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     iget-object v1, v1, Lcom/android/server/am/ActivityManagerService;->mUiHandler:Lcom/android/server/am/ActivityManagerService$UiHandler;
@@ -85,20 +85,20 @@
 
     invoke-direct {v3, p0, v0}, Lcom/android/server/am/ActivityManagerService$5$1;-><init>(Lcom/android/server/am/ActivityManagerService$5;Landroid/app/Dialog;)V
 
-    .line 5399
+    .line 5389
     const-wide/16 v4, 0xfa0
 
-    .line 5391
+    .line 5381
     invoke-virtual {v1, v3, v4, v5}, Lcom/android/server/am/ActivityManagerService$UiHandler;->postDelayed(Ljava/lang/Runnable;J)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit v2
 
-    .line 5387
+    .line 5377
     return-void
 
-    .line 5388
+    .line 5378
     .end local v0    # "d":Landroid/app/Dialog;
     :catchall_0
     move-exception v1
