@@ -44264,88 +44264,6 @@
     return-void
 .end method
 
-.method public showBootMessage(Ljava/lang/CharSequence;Z)V
-    .locals 3
-    .param p1, "msg"    # Ljava/lang/CharSequence;
-    .param p2, "always"    # Z
-
-    .prologue
-    const/4 v0, 0x0
-
-    .local v0, "first":Z
-    iget-object v2, p0, Lcom/android/server/wm/WindowManagerService;->mWindowMap:Ljava/util/HashMap;
-
-    monitor-enter v2
-
-    :try_start_0
-    iget-boolean v1, p0, Lcom/android/server/wm/WindowManagerService;->mAllowBootMessages:Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    if-nez v1, :cond_0
-
-    monitor-exit v2
-
-    return-void
-
-    :cond_0
-    :try_start_1
-    iget-boolean v1, p0, Lcom/android/server/wm/WindowManagerService;->mShowingBootMessages:Z
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    if-nez v1, :cond_2
-
-    if-nez p2, :cond_1
-
-    monitor-exit v2
-
-    return-void
-
-    :cond_1
-    const/4 v0, 0x1
-
-    :cond_2
-    :try_start_2
-    iget-boolean v1, p0, Lcom/android/server/wm/WindowManagerService;->mSystemBooted:Z
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    if-eqz v1, :cond_3
-
-    monitor-exit v2
-
-    return-void
-
-    :cond_3
-    const/4 v1, 0x1
-
-    :try_start_3
-    iput-boolean v1, p0, Lcom/android/server/wm/WindowManagerService;->mShowingBootMessages:Z
-
-    iget-object v1, p0, Lcom/android/server/wm/WindowManagerService;->mPolicy:Landroid/view/WindowManagerPolicy;
-
-    invoke-interface {v1, p1, p2}, Landroid/view/WindowManagerPolicy;->showBootMessage(Ljava/lang/CharSequence;Z)V
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    monitor-exit v2
-
-    if-eqz v0, :cond_4
-
-    invoke-virtual {p0}, Lcom/android/server/wm/WindowManagerService;->performEnableScreen()V
-
-    :cond_4
-    return-void
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v2
-
-    throw v1
-.end method
-
 .method public showCircularMask(Z)V
     .locals 8
     .param p1, "visible"    # Z
@@ -45854,7 +45772,6 @@
     throw v7
 .end method
 
-<<<<<<< HEAD
 .method public updateBootProgress(ILandroid/content/pm/ApplicationInfo;IIZ)V
     .locals 3
     .param p1, "stage"    # I
@@ -45956,8 +45873,6 @@
     throw v1
 .end method
 
-=======
->>>>>>> fde6f2b... dexopt: remove cm custom boot dexopt UI
 .method updateDisplayAndOrientationLocked()Landroid/view/DisplayInfo;
     .locals 15
 
