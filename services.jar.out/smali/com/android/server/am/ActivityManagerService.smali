@@ -28645,7 +28645,7 @@
 
     move-object/from16 v0, v30
 
-    move-object/from16 v1, v29
+    move-object/from16 v1, v31
 
     invoke-interface {v13, v0, v1}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
