@@ -1,0 +1,115 @@
+===================================
+Since Sun Oct  9 12:11:10 UTC 2016
+===================================
+
+   * packages/apps/Eleven
+f1daeeb Merge "eleven: Add support for the MediaSession queue" into cm-13.0
+
+===================================
+Since Sat Oct  8 12:54:03 UTC 2016
+===================================
+
+   * frameworks/base
+1913944 Fix volume keys wakeup status handling
+
+   * packages/apps/Settings
+345b425 Settings: display: Fix search indexing of high touch sensitivity
+
+   * vendor/cm
+8a1906c extract_utils: Do not change app SRC if there are arguments
+
+===================================
+Since Fri Oct  7 13:21:22 UTC 2016
+===================================
+
+   * packages/apps/Eleven
+bd9e6d2 Eleven: Correctly set shake to play
+488ce05 eleven: Add support for the MediaSession queue
+
+   * packages/apps/Settings
+5369e14 Settings: Update contributors cloud DB
+
+   * packages/providers/ThemesProvider
+6abe369 Implement theme mixes from ThemesContract
+
+   * vendor/cm
+fb1f75f version: Set version string to 13.0.3 to reflect security update
+
+   * vendor/cmsdk
+c4f27d5 Themes: Introduce theme mixes into ThemesContract
+
+===================================
+Since Thu Oct  6 11:55:23 UTC 2016
+===================================
+
+   * android
+6b895d8 default.xml: cm: Update to 6.0.1_r72
+
+   * build
+7b16908 Merge tag 'android-6.0.1_r72' into HEAD
+
+   * external/bouncycastle
+beba020 Merge tag 'android-6.0.1_r72' into HEAD
+
+   * external/flac
+be25551 Merge tag 'android-6.0.1_r72' into HEAD
+
+   * external/libavc
+130f76a Merge tag 'android-6.0.1_r72' into HEAD
+
+   * external/libvpx
+22ab465 Merge tag 'android-6.0.1_r72' into HEAD
+
+   * external/sonivox
+4d2a2d9 Merge tag 'android-6.0.1_r72' into HEAD
+
+   * frameworks/av
+cb1cdff Merge tag 'android-6.0.1_r72' into HEAD
+
+   * frameworks/base
+b3616bc Merge tag 'android-6.0.1_r72' into HEAD
+
+   * frameworks/native
+b22bca4 Merge tag 'android-6.0.1_r72' into HEAD
+
+   * frameworks/opt/net/wifi
+e9e7aed Merge tag 'android-6.0.1_r72' into HEAD
+
+   * hardware/ril
+65c8989 Merge tag 'android-6.0.1_r72' into HEAD
+
+   * libcore
+436c54b Merge tag 'android-6.0.1_r72' into HEAD
+
+   * packages/apps/Email
+de1a096 Merge tag 'android-6.0.1_r72' into HEAD
+
+   * packages/apps/Settings
+9ffb459 Merge tag 'android-6.0.1_r72' into HEAD
+
+   * packages/providers/DownloadProvider
+b25fddc Merge tag 'android-6.0.1_r72' into HEAD
+
+   * packages/providers/TelephonyProvider
+c3d8153 Merge tag 'android-6.0.1_r72' into HEAD
+
+   * packages/services/Telephony
+9330f1c Telephony: Fix mobile network settings for CDMA without LTE
+5accfb7 Merge tag 'android-6.0.1_r72' into HEAD
+
+   * system/core
+7e1cf25 Merge tag 'android-6.0.1_r72' into HEAD
+
+   * system/media
+69c4724 Merge tag 'android-6.0.1_r72' into HEAD
+
+===================================
+Since Wed Oct  5 12:10:10 UTC 2016
+===================================
+
+   * packages/apps/AudioFX
+73e1903 Merge "AudioFX: fix missing bassboost/virtualizer" into cm-13.0
+
+   * packages/apps/SoundRecorder
+4c55ff0 SoundRecorder: Add AAC recording option
+
