@@ -30,7 +30,7 @@ Then to sync up:
 
 $ repo sync
 
-$ git clone https://github.com/linhphi9x94/Miui8_patchrom_Pantech_IM-A910.git m8
+$ git clone https://github.com/linhphi9x94/Miui8_Patchrom_HTC-M8.git m8
 
 Build
 --------
@@ -47,6 +47,5 @@ Now you can get your own miui ROM, enjoy it!
 - @wuxianlin
 - @garyyiu2015
 - http://xdavn.com
-
- If you like my rom, please donate to me. It will help me to keep my work: 
+If you like my rom, please donate to me. It will help me to keep my work: 
  https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=542JFBZTLCU5W
